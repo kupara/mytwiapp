@@ -6,13 +6,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
+var mongo = require('mongodb');
+var mongoClient = mongo.MongoClient;
+var bson = mongo.BSONPure;
 //initialize mongoose schemas
 require('./models/models');
 var index = require('./routes/index');
 var api = require('./routes/api');
 var authenticate = require('./routes/authenticate')(passport);
 var mongoose = require('mongoose');                         //add for Mongo support
-//mongoose.connect('mongodb://localhost/test-chirp');   
+//mongoose.connect('mongodb://localhost/test-twit');   
 mongoose.connect('mongodb://mongo:mongo@ds061474.mongolab.com:61474/mytwiapp')           //connect to Mongo
 var app = express();
 
