@@ -6,9 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var passport = require('passport');
-var mongo = require('mongodb');
-var mongoClient = mongo.MongoClient;
-var bson = mongo.BSONPure;
+
 //initialize mongoose schemas
 require('./models/models');
 var index = require('./routes/index');
