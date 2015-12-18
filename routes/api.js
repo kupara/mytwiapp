@@ -41,7 +41,6 @@ router.route('/posts')
 	.get(function(req, res){
 		console.log('debug1');
 		Post.find(function(err, posts){
-			console.log('debug2');
 			if(err){
 				return res.send(500, err);
 			}
