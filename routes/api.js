@@ -24,7 +24,6 @@ function isAuthenticated (req, res, next) {
 router.use('/posts', isAuthenticated);
 
 router.route('/posts')
-	//creates a new post
 	.post(function(req, res){
 
 		var post = new Post();
@@ -37,7 +36,7 @@ router.route('/posts')
 			return res.json(post);
 		});
 	})
-	//gets all posts
+	
 	.get(function(req, res){
 		console.log('debug1');
 		Post.find(function(err, posts){
@@ -59,7 +58,7 @@ router.route('/posts/:id')
 			res.json(post);
 		});
 	}) 
-	//updates specified post
+	
 	.put(function(req, res){
 		Post.findById(req.params.id, function(err, post){
 			if(err)
