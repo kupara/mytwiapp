@@ -8,7 +8,6 @@ function isAuthenticated (req, res, next) {
 	// Passport adds this method to request object. A middleware is allowed to add properties to
 	// request and response objects
 
-	//allow all get request methods
 	if(req.method === "GET"){
 		return next();
 	}
